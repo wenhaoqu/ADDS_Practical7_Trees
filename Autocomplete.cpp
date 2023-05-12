@@ -177,7 +177,7 @@ vector<string> Autocomplete::getSuggestions(string partialWord)
     int index = 0;
     int wordLength = partialWord.length();
 
-    while (index < wordLength) 
+    while (index < wordLength)
     {
         childNode = curNode->getChild(partialWord[index]);
         if (childNode == nullptr) 
@@ -207,9 +207,8 @@ vector<string> Autocomplete::getSuggestions(string partialWord)
 void Autocomplete::getSuggestionsHelper(
     TrieNode* curNode,
     vector<string>& suggestionsList,
-    string subWord
-) {
-
+    string subWord)
+{
     if (curNode->getEndOfWord()) {
         suggestionsList.push_back(subWord);
     }

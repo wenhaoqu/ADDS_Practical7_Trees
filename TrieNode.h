@@ -3,6 +3,8 @@
 #include <map>
 #include <vector>
 
+
+
 class TrieNode
 {
 private:
@@ -11,14 +13,18 @@ private:
 
 public:
     TrieNode();
+    ~TrieNode();
+
     TrieNode* setChild(char letter);
-    void setEndOfWord(bool val);
-    bool getEndOfWord();
     TrieNode* getChild(char letter);
     void removeChild(char letter);
+
+    void setEndOfWord(bool val);
+    bool getEndOfWord();
+    
     bool hasChildren();
     std::vector<char> getChildrenKeys();
     int getNumOfChildren();
-    ~TrieNode();
+    
 };
 

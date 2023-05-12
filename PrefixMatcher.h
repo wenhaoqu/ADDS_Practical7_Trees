@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 #include <map>
-#include "Autocomplete.h"
+#include "TrieNode.h"
 
 using namespace std;
 
@@ -11,11 +11,18 @@ using namespace std;
 class PrefixMatcher
 {
 private:
-	Autocomplete m_cAuto;
 	map<int, string> m_mRouter;
+	TrieNode* root;
+	
+
 
 public:
+	PrefixMatcher();
+	~PrefixMatcher();
+
 	int selectRouter(string networkAddress);
 	void insert(string address, int routerNumber);
+
+	void getAddress(TrieNode* curNode, string& dest);
 };
 
